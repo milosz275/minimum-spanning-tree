@@ -4,7 +4,7 @@
 #include <iostream>
 #include <fstream>
 
-void drawSVG(const std::vector<Point>& points, const std::vector<std::pair<int, int>>& output_edges, const std::string& filename)
+void drawSVG(const std::vector<Point>& points, const std::vector<std::pair<int, int>>& mst_edges, const std::string& filename)
 {
     if (points.empty()) return;
 
@@ -50,9 +50,9 @@ void drawSVG(const std::vector<Point>& points, const std::vector<std::pair<int, 
     }
     svg << "</g>\n";
 
-    // Output edges in red
+    // MST edges in red
     svg << "<g stroke='red' stroke-width='3'>\n";
-    for (auto& e : output_edges) {
+    for (auto& e : mst_edges) {
         svg << "<line x1='" << transformX(points[e.first].x) << "' y1='" << transformY(points[e.first].y)
             << "' x2='" << transformX(points[e.second].x) << "' y2='" << transformY(points[e.second].y) << "' />\n";
     }

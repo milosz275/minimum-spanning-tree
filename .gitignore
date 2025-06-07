@@ -6,7 +6,7 @@ build
 *.out
 *.o
 *.a
-visualization*.*
+mst_visualization*.*
 *.bak
 docs/
-!assets/visualization.svg
+!assets/mst_visualization.svg

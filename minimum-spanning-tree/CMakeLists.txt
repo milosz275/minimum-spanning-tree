@@ -1,20 +1,21 @@
-﻿# CMakeList.txt : CMake project for graph-solvers-template, include source and define
+﻿# CMakeList.txt : CMake project for minimum-spanning-tree, include source and define
 # project specific logic here.
 #
 
 # Add source to this project's executable.
-add_executable (graph-solvers-template
+add_executable (minimum-spanning-tree
     "main.cpp"
     "src/common/types.cpp"
     "src/geometry/visualization.cpp"
     "src/model/solver.cpp"
+    "src/model/subsets.cpp"
 )
 
-target_include_directories(graph-solvers-template PRIVATE
+target_include_directories(minimum-spanning-tree PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}/include
 )
 
-target_link_libraries(graph-solvers-template
+target_link_libraries(minimum-spanning-tree
     cplex${CPLEX_VERSION}.lib
     concert.lib
     ilocplex.lib
@@ -22,7 +23,7 @@ target_link_libraries(graph-solvers-template
 )
 
 if (CMAKE_VERSION VERSION_GREATER 3.15)
-  set_property(TARGET graph-solvers-template PROPERTY CXX_STANDARD 20)
+  set_property(TARGET minimum-spanning-tree PROPERTY CXX_STANDARD 20)
 endif()
 
 # GoogleTest via FetchContent
